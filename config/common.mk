@@ -96,7 +96,8 @@ PRODUCT_PACKAGES += \
     LatinIME \
     BluetoothExt \
     Launcher3Dark \
-    Nova
+    Nova \
+    AmbientPlayHistoryProvider
 
 
 # Extra tools
