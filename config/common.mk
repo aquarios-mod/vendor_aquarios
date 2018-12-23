@@ -70,6 +70,10 @@ PRODUCT_COPY_FILES += \
     vendor/aquarios/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
     vendor/aquarios/prebuilt/common/bin/sysinit:system/bin/sysinit
 
+# Weather
+PRODUCT_COPY_FILES += \
+    vendor/aquarios/prebuilt/etc/permissions/org.pixelexperience.weather.client.xml:system/etc/permissions/org.pixelexperience.weather.client.xml
+
 # Required packages
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver \
@@ -96,7 +100,8 @@ PRODUCT_PACKAGES += \
     BluetoothExt \
     Launcher3Dark \
     Nova \
-    AmbientPlayHistoryProvider
+    AmbientPlayHistoryProvider \
+    WeatherClient
 
 
 # Extra tools
