@@ -102,7 +102,6 @@ PRODUCT_PACKAGES += \
     BluetoothExt \
     Launcher3Dark \
     Nova \
-    AmbientPlayHistoryProvider \
     WeatherClient
 
 
