@@ -142,6 +142,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.disable_rescue=1
 endif
 
+# Disable ADB security for all except on ENG builds
+ifeq ($(TARGET_BUILD_VARIANT),eng)
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.adb.secure=0
+else
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.adb.secure=1
+endif
+
 PRODUCT_PACKAGE_OVERLAYS += vendor/aquarios/overlay/common
 
 # Vendor/themes
