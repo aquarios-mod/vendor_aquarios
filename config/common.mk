@@ -22,8 +22,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/aquarios/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/aquarios/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/aquarios/prebuilt/common/bin/50-aquarios.sh:system/addon.d/50-aquarios.sh \
-    vendor/aquarios/prebuilt/common/bin/clean_cache.sh:system/bin/clean_cache.sh
+    vendor/aquarios/prebuilt/common/bin/50-aquarios.sh:system/addon.d/50-aquarios.sh
 
 ifeq ($(AB_OTA_UPDATER),true)
 PRODUCT_COPY_FILES += \
@@ -153,6 +152,8 @@ ifndef AQUARIOS_BUILD_TYPE
     AQUARIOS_BUILD_TYPE := UNOFFICIAL
 endif
 
+TARGET_PRODUCT_SHORT := $(subst aqua_,,$(AQUARIOS_BUILD_TYPE))
+
 # Set all versions
 AQUARIOS_VERSION := Aquarios-$(AQUARIOS_BUILD)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-$(AQUARIOS_BUILD_TYPE)$(AQUARIOS_POSTFIX)
 AQUARIOS_MOD_VERSION := Aquarios-$(AQUARIOS_BUILD)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)-$(AQUARIOS_BUILD_TYPE)$(AQUARIOS_POSTFIX)
@@ -162,7 +163,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     aquarios.ota.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE) \
     ro.aquarios.version=$(AQUARIOS_VERSION) \
     ro.modversion=$(AQUARIOS_MOD_VERSION) \
-    ro.aquarios.buildtype=$(AQUARIOS_BUILD_TYPE)
+    ro.aquarios.buildtype=$(AQUARIOS_BUILD_TYPE) \
+    ro.aquarios.type=$(AQUARIOS_BUILD_TYPE) \
+    ro.aqua.fingerprint=$(ROM_FINGERPRINT)
 
 # Google sounds
 include vendor/aquarios/google/GoogleAudio.mk
