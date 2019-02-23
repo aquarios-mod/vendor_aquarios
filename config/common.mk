@@ -102,7 +102,8 @@ PRODUCT_PACKAGES += \
     BluetoothExt \
     Launcher3Dark \
     Nova \
-    WeatherClient
+    WeatherClient \
+    OmniStyle
 
 
 # Extra tools
