@@ -105,7 +105,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Basic \
     LiveWallpapersPicker \
-    PhaseBeam
+    PhaseBeam \
+    Calendar
 
 # Include explicitly to work around GMS issues
 PRODUCT_PACKAGES += \
