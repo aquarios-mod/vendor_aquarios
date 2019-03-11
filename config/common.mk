@@ -18,6 +18,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.debug.alloc=0
 
+# Phonelocation!
+PRODUCT_COPY_FILES +=  \
+    vendor/aquarios/prebuilt/common/media/location/suda-phonelocation.dat:system/media/location/suda-phonelocation.dat
+
 # Backup tool
 PRODUCT_COPY_FILES += \
     vendor/aquarios/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
@@ -103,7 +107,8 @@ PRODUCT_PACKAGES += \
     Launcher3Dark \
     Nova \
     WeatherClient \
-    OmniStyle
+    OmniStyle \
+    PhoneLocationProvider
 
 
 # Extra tools
