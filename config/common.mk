@@ -108,7 +108,8 @@ PRODUCT_PACKAGES += \
     Nova \
     WeatherClient \
     OmniStyle \
-    PhoneLocationProvider
+    PhoneLocationProvider \
+    ForceStop
 
 
 # Extra tools
