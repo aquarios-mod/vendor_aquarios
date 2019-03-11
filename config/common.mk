@@ -22,6 +22,20 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES +=  \
     vendor/aquarios/prebuilt/common/media/location/suda-phonelocation.dat:system/media/location/suda-phonelocation.dat
 
+# LatinIME gesture typing
+ifeq ($(SUDA_CPU_ABI),arm64-v8a)
+PRODUCT_PACKAGES += \
+    GooglePinYin
+
+ PRODUCT_COPY_FILES += $(shell test -d vendor/aquarios/prebuilt/app/GooglePinYin && \
+    find vendor/aquarios/prebuilt/app/GooglePinYin -name '*.so' \
+    -printf '%p:system/app/GooglePinYin/lib/arm64/%f ')
+else
+PRODUCT_PACKAGES += \
+    LatinIME
+
+endif
+
 # Backup tool
 PRODUCT_COPY_FILES += \
     vendor/aquarios/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
@@ -102,7 +116,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Calculator \
     CustomDoze\
-    LatinIME \
     BluetoothExt \
     Launcher3Dark \
     Nova \
