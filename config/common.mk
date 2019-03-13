@@ -27,8 +27,8 @@ ifeq ($(SUDA_CPU_ABI),arm64-v8a)
 PRODUCT_PACKAGES += \
     GooglePinYin
 
- PRODUCT_COPY_FILES += $(shell test -d vendor/aquarios/prebuilt/app/GooglePinYin && \
-    find vendor/aquarios/prebuilt/app/GooglePinYin -name '*.so' \
+ PRODUCT_COPY_FILES += $(shell test -d vendor/aquarios/prebuilt/GooglePinYin && \
+    find vendor/aquarios/prebuilt/GooglePinYin -name '*.so' \
     -printf '%p:system/app/GooglePinYin/lib/arm64/%f ')
 else
 PRODUCT_PACKAGES += \
